@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card shadow mb-4">
+  <div class="card-body">
+  <table class="table table-striped">
+  <tr> <th>Id</th><th>Nom</th> <th>ClassementEquipe</th> <th>Date Création</th> <th>league</th>             </tr>
+        <tbody *ngFor="let equipe of equipes">
+
+            <tr >
+              <td>{{equipe.idEquipe}}</td>
+              <td>{{equipe.nomEquipe}}</td>
+              <td>{{equipe.classementEquipe}}</td>
+              <td>{{equipe.dateCreation | date:'dd/MM/yyyy'}}</td>
+             <td>{{equipe.league.nomLea}}</td>
+              <td><a class="btn btn-danger" (click)="supprimerEquipe(equipe)">Supprimer</a></td>
+              <td><a class="btn btn-success" [routerLink]="['/updateEquipe',equipe.idEquipe]">Modifier</a></td>
+
+            </tr>
+
+       </tbody>
+      </table>
+    </div>
+  </div>
+</div>
